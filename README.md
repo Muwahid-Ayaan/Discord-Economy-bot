@@ -18,8 +18,8 @@ This is a Discord bot created using Python. It has features to:
 
 1. Clone this repository:  
    ```bash
-   git clone <repository-url>
-   cd <repository-folder>
+   git clone https://github.com/Muwahid-Ayaan/Discord-Economy-bot.git
+   cd Discord-Economy-bot
    ```
 
 2. Install the required dependencies:  
