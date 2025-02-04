@@ -1,0 +1,10 @@
+# Ignore virtual environments
+venv/
+__pycache__/
+
+# Ignore sensitive files
+.env
+
+# Ignore generated or serialized files
+*.pkl
+
