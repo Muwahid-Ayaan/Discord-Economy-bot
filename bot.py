@@ -13,12 +13,17 @@ import asyncio
 import humanfriendly
 import random
 from datetime import datetime,timedelta
-Channels = [1307959642047123556,1253307940224499799]
+
+load_dotenv()
 Money_DATA_FILE = "UserMoney.pkl"
 intents = discord.Intents.default()
 intents.message_content = True  
 bot = commands.Bot(command_prefix='.', intents=intents)
-Approved = [830768330612408330]
+
+admin_ids = os.getenv("ADMIN_IDS", "").split(",")
+Channel_ids = os.getenv("CHANNEL_IDS", "").split(",")
+Approved = [int(id.strip()) for id in admin_ids if id.strip().isdigit()]
+Channels = [int(id.strip()) for id in Channel_ids if id.strip().isdigit()]
 def save_data(signal, frame):
     print("Ctrl+C detected, saving data...")
     with open(Money_DATA_FILE, 'wb') as f:
@@ -795,7 +800,7 @@ async def deposite(ctx,Money_:str = None):
     
 
 
-load_dotenv()
+
 TOKEN = os.getenv("DISCORD_TOKEN")
 bot.run(TOKEN)
 
